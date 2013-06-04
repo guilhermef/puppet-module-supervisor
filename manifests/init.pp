@@ -180,6 +180,7 @@ class supervisor(
     '/var/run/supervisor'
   ]:
     ensure  => $dir_ensure,
+    owner   => $user,
     purge   => true,
     backup  => false,
     require => Package[$supervisor::params::package],
