@@ -1,5 +1,5 @@
 name    'guilhermef-supervisor'
-version '0.0.4'
+version '0.0.5'
 author 'Digg, Inc'
 license 'UNKNOWN'
 summary 'Supervisor module made by Digg, Inc'

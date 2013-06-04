@@ -1,3 +1,6 @@
+[unix_http_server]
+file=/tmp/supervisor.sock   ; (the path to the socket file)
+
 <% if enable_inet_server -%>
 [inet_http_server]
 port=<%= inet_server_port %>
@@ -31,6 +34,9 @@ identifier=<%= identifier %>
 
 [rpcinterface:supervisor]
 supervisor.rpcinterface_factory = supervisor.rpcinterface:make_main_rpcinterface
+
+[supervisorctl]
+serverurl = unix:///tmp/supervisor.sock
 
 [include]
 files = <%= scope.lookupvar('supervisor::params::conf_dir') -%>/*.ini
